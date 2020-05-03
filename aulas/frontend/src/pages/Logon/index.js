@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiLogIn } from 'react-icons/fi';
+import { FiLogIn, FiChevronRight } from 'react-icons/fi';
 
 import api from '../../services/api';
 import './styles.css';
@@ -44,6 +44,10 @@ export default function Logon(){
                         <FiLogIn size={16} color="#E02041" />
                         Não tenho cadastro
                     </Link >
+                    <Link className="back-linkdown" to="/recoverid">
+                        <FiLogIn size={16} color="#E02041" />
+                        Esqueci meu ID
+                    </Link>
                 </form>
             </section>
 

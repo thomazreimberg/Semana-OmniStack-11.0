@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {Link, useHistory } from 'react-router-dom';
+import InputMask from 'react-input-mask';
+import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi'
 
 import api from '../../services/api';
@@ -63,9 +64,12 @@ export default function Register(){
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                      />
-                    <input 
-                    type="number" 
+                    <InputMask 
+                    type="text" 
                     placeholder="WhatsApp"
+                    mask="+5\5 (99) 99999-9999"
+                    maskChar={null}
+                    maxLength="20"
                     value={whatsapp}
                     onChange={e => setWhatsapp(e.target.value)}
                     />
@@ -77,6 +81,7 @@ export default function Register(){
                         onChange={e => setCity(e.target.value)}
                         />
                         <input placeholder="UF"
+                         maxLength="2"
                          style={{ width: 80 }} 
                          value={uf}
                          onChange={e => setUf(e.target.value)}
